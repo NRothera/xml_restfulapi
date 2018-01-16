@@ -12,3 +12,5 @@ gem 'rack'
 gem 'http'
 
 gem 'rake'
+
+gem 'sinatra-contrib'
