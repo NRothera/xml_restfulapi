@@ -13,9 +13,23 @@ class DevicesController < Sinatra::Base
     'Hello'
   end
 
+  before do
+    content_type 'application/json'
+  end
+
   get '/devices' do
     everything = Devices.all
   end
+
+  get '/devices/:name' do
+    name = params[:name]
+    @device = Devices.find(name)
+
+    erb :'show'
+  end
+
+
+
 
 
 end
