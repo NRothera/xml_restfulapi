@@ -23,7 +23,7 @@ class Devices
     set_up_json.get_device_names
     set_up_json.get_device_values
     set_up_json.get_device_notes
-    device_hash = set_up_json.devices_to_hash[name]
+    device_hash = set_up_json.devices_to_hash[name].to_json
   end
 
 

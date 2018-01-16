@@ -36,9 +36,10 @@ class DeviceXml
 
   def devices_to_hash
     all_devices = {}
+
     index = 0
     get_device_names.each do |device|
-      all_devices[device] = [get_device_values[index], get_device_notes[index]]
+      all_devices[device] = [:value => get_device_values[index], :notes => get_device_notes[index]]
       index += 1
     end
     all_devices
