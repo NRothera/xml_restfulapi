@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/namespace'
 require_relative '../schema/xml_parsing'
 require 'json'
 
@@ -9,23 +8,17 @@ class DevicesController < Sinatra::Base
 
   set :views, Proc.new { File.join(root, "views") }
 
-  get '/' do
-    'Hello'
-  end
-
   before do
     content_type 'application/json'
   end
 
-  get '/devices' do
-    everything = Devices.all
+  get '/' do
+    @everything = Devices.all
   end
 
-  get '/devices/:name' do
+  get '/:name' do
     name = params[:name]
     @device = Devices.find(name)
-
-    erb :'show'
   end
 
 

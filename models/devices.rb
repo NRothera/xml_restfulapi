@@ -27,6 +27,4 @@ class Devices
   end
 
 
-
-
 end
